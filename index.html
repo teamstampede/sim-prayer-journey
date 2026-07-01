@@ -146,7 +146,7 @@ function render(){
     document.getElementById("ni").oninput=e=>S.name=e.target.value;
     document.getElementById("ni").onkeydown=e=>{if(e.key==="Enter")enterUser();};
     document.getElementById("bb").onclick=enterUser;
-    document.getElementById("ab").onclick=()=>{S.stage="admin";S.adminUser=null;render();};
+    document.getElementById("ab").onclick=()=>{const code=prompt("Enter Apostle access code:");if(code==="0416"){S.stage="admin";S.adminUser=null;render();}else if(code!==null){alert("Access denied. This area is restricted.");}};
     return;
   }
   if(S.stage==="admin"){
